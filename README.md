@@ -53,7 +53,7 @@ A responsive skincare product landing page built using HTML, Tailwind CSS, and J
 
 ## 📹 Loom Walkthrough
 
-[Loom Video (2 min)]()  
+[Loom Video (2 min)](https://www.loom.com/share/ed3192614267401886dd24f49b9fb7ae?sid=76f58212-5fce-453d-890d-75f5f8719de9)  
 
 
 ---
