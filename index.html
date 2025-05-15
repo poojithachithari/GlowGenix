@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>GlowGenix</title>
+</head>
+
+<body class="bg-[#FFFDF9] text-[#1A1A1A] leading-relaxed">
+    <!-- Navbar Starts -->
+
+    <header class="bg-[#FFFDF9] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative">
+
+            <!-- LEFT: Hamburger (fixed width) -->
+            <div class="w-12 flex justify-start md:hidden">
+                <button id="menu-btn" class="text-2xl text-[#1A1A1A] focus:outline-none">
+                    ☰
+                </button>
+            </div>
+
+            <!-- CENTER: Logo (now truly centered) -->
+            <a href="#" class="text-[#1A1A1A] font-serif text-2xl font-bold mx-auto">
+                GlowGenix
+            </a>
+
+            <!-- RIGHT: Icons (same width as left to balance) -->
+            <div class="w-28 flex items-center justify-end gap-3 md:hidden">
+                <span class="text-xl cursor-pointer text-blue-500  w-5 h-5"><img src="/Images/icons/search.svg"
+                        alt="Search" class="w-full h-full object-contain" /></span>
+                <span class="text-xl cursor-pointer text-purple-800  w-5 h-5"><img src="/Images/icons/account.png"
+                        alt="Search" class="w-full h-full object-contain" /></span>
+                <div class="relative  w-6 h-6">
+                    <span class="text-xl cursor-pointer"><img src="/Images/icons/shopping-cart.png" alt="Search"
+                            class="w-full h-full object-contain" /></span>
+                    <span
+                        class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav + Icons (hidden on mobile) -->
+            <div class="hidden md:flex items-center justify-between w-full">
+                <nav class="flex gap-16 text-[#1A1A1A] font-medium mx-auto">
+                    <a href="#" class="hover:text-[#FFB7C5] transition">Home</a>
+                    <a href="#" class="hover:text-[#FFB7C5] transition">About</a>
+                    <a href="#" class="hover:text-[#FFB7C5] transition">Skincare</a>
+                    <a href="#" class="hover:text-[#FFB7C5] transition">Best Sellers</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <span class="text-xl cursor-pointer w-5 h-5"><img src="/Images/icons/search.svg" alt="Search"
+                            class="w-full h-full object-contain" /></span>
+                    <span class="text-xl cursor-pointer w-5 h-5"><img src="/Images/icons/account.png" alt="Search"
+                            class="w-full h-full object-contain" /></span>
+                    <div class="relative w-6 h-6">
+                        <span class="text-xl cursor-pointer"><img src="/Images/icons/shopping-cart.png" alt="Search"
+                                class="w-full h-full object-contain" /></span>
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden px-4 pb-4 hidden">
+            <nav class="flex flex-col gap-4 text-[#1A1A1A] font-medium mt-4">
+                <a href="#" class="hover:text-[#FFB7C5]">Home</a>
+                <a href="#" class="hover:text-[#FFB7C5]">About</a>
+                <a href="#" class="hover:text-[#FFB7C5]">Skincare</a>
+                <a href="#" class="hover:text-[#FFB7C5]">Best Sellers</a>
+            </nav>
+        </div>
+    </header>
+    <!--Nav Bar ends  -->
+  
+    <!-- Hero Section starts -->
+    <section class="bg-white px-6 py-10 max-w-7xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 flex flex-col lg:flex-row gap-8 items-start">
+        <!-- LEFT: Images and Quantity -->
+        <div>
+            <!-- Main Product Image -->
+            <img id="mainImage" src="Images/serum0.jpg" alt="Product"
+                class="w-full rounded-lg shadow-md mb-4 mx-auto" />
+
+            <!-- Thumbnails -->
+            <div class="flex gap-2 mt-4 justify-center">
+                <img onclick="changeImage('Images/serum0.jpg')" src="Images/serum0.jpg"
+                    class="w-16 h-16 object-cover rounded-md border cursor-pointer">
+                <img onclick="changeImage('Images/serum2.jpg')" src="Images/serum2.jpg"
+                    class="w-16 h-16 object-cover rounded-md border cursor-pointer">
+                <img onclick="changeImage('Images/serum3.jpg')" src="Images/serum3.jpg"
+                    class="w-16 h-16 object-cover rounded-md border cursor-pointer">
+            </div>
+
+
+        </div>
+
+        <!-- RIGHT: Product Info -->
+        <div class="space-y-4">
+            <h1 class="text-3xl font-semibold">Vitamin C 10% Face Serum</h1>
+
+            <!-- Rating and Tag -->
+            <div class="flex items-center gap-2">
+                <div class="text-black">★★★☆☆</div>
+                <span class="text-sm text-gray-500">1776 Reviews</span>
+            </div>
+
+            <div class="inline-block bg-yellow-100 text-yellow-800 text-sm px-3 py-1 rounded-md">
+                ✨ Highly rated by customers for: <strong>glow</strong>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed">
+                A glow-boosting daily serum with Vitamin C & Polyhydroxy Acid (PHA). Brightens and tones dull, damaged
+                skin.
+            </p>
+
+            <!-- Benefits -->
+            <ul class="text-sm text-gray-600 list-disc pl-5 space-y-1">
+                <li>Fragrance free</li>
+                <li>Essential oil free</li>
+                <li>Non-comedogenic</li>
+            </ul>
+
+            <!-- Offer -->
+            <div class="bg-black text-white text-xs inline-block px-3 py-1 rounded-md">
+                Earn up to 66 MCash on this purchase
+            </div>
+
+            <!-- Price -->
+            <div class="flex items-baseline gap-3">
+                <span class="text-lg font-semibold text-black">₹ 664</span>
+                <span class="text-sm line-through text-gray-400">₹ 699</span>
+                <span class="text-sm text-green-600 font-medium">5% Off</span>
+            </div>
+
+            <!-- Quantity + Add to Cart -->
+            <div class="flex items-center gap-4 mt-6">
+                <!-- Quantity Selector -->
+                <div class="flex items-center border rounded-md">
+                    <button onclick="updateQty(-1)" class="px-3 py-2 bg-gray-100 text-lg">−</button>
+                    <input id="qtyInput" type="number" value="1" min="1"
+                        class="w-12 text-center outline-none border-l border-r">
+                    <button onclick="updateQty(1)" class="px-3 py-2 bg-gray-100 text-lg">+</button>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button
+                    class="flex-1 bg-black text-white py-3 rounded-md text-sm font-medium hover:bg-gray-800 transition">
+                    ADD TO CART
+                </button>
+            </div>
+            <section class="max-w-xl mx-auto mt-10 space-y-4">
+                <!-- FAQ Item -->
+                <div class="border-b">
+                    <button class="w-full flex justify-between items-center py-4 text-left font-semibold text-black"
+                        onclick="toggleFaq(this)">
+                        What Makes It Potent?
+                        <span class="text-xl transition-all cursor-pointer">+</span>
+                    </button>
+                    <div class="hidden pb-4 text-gray-600">
+                        <p>This serum contains stabilized Vitamin C along with PHA and Centella for maximum potency and
+                            effectiveness.</p>
+                    </div>
+                </div>
+
+                <div class="border-b">
+                    <button class="w-full flex justify-between items-center py-4 text-left font-semibold text-black"
+                        onclick="toggleFaq(this)">
+                        Ideal For
+                        <span class="text-xl transition-all cursor-pointer">+</span>
+                    </button>
+                    <div class="hidden pb-4 text-gray-600">
+                        <p>Suitable for all skin types, especially those looking for brighter and more even-toned skin.
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="border-b">
+                    <button class="w-full flex justify-between items-center py-4 text-left font-semibold text-black"
+                        onclick="toggleFaq(this)">
+                        How to Use
+                        <span class="text-xl transition-all cursor-pointer">+</span>
+                    </button>
+                    <div class="hidden pb-4 text-gray-600">
+                        <p>Apply 2-3 drops after cleansing and before moisturizer. Use sunscreen during the day.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <!-- Hero section ends -->
+
+    <!-- Product Features Starts -->
+    <section class="bg-[#FFFDF9] py-12 max-w-7xl mx-auto px-6">
+        <div class=" mx-auto space-y-10 px-6">
+            <!-- Feature Icons Section -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-16 text-center">
+                <div class="flex-1">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C1E1C1] flex items-center justify-center">
+                        <img src="Images/icons/doctor.png" alt="Dermatologist" class="w-8 h-8" />
+                    </div>
+                    <p class="text-[#1A1A1A] font-semibold">Designed by<br />Dermatologists</p>
+                </div>
+                <div class="flex-1">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C1E1C1] flex items-center justify-center">
+                        <img src="Images/icons/serum.png" alt="Active Percentage" class="w-8 h-8" />
+                    </div>
+                    <p class="text-[#1A1A1A] font-semibold">Honest Disclosure<br />of Active Percentage</p>
+                </div>
+                <div class="flex-1">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#C1E1C1] flex items-center justify-center">
+                        <img src="Images/icons/verified-badge1.png" alt="Safe & Effective" class="w-8 h-8" />
+                    </div>
+                    <p class="text-[#1A1A1A] font-semibold">Safe &<br />Effective</p>
+                </div>
+            </div>
+
+            <!-- Expandable Description -->
+            <div class="text-[#1A1A1A] text-base leading-relaxed max-w-7xl mx-auto justify-center">
+                <p>
+                    This serum is exactly what your skin needs for a glow that turns heads.
+                    Say goodbye to blemishes, pigmentation, and uneven skin tone.
+                    With antioxidant-rich Vitamin C and deeply hydrating Hyaluronic Acid,
+                    it brightens dull skin and targets dark spots with precision.
+                    <span id="more-text" class="hidden">
+                        The 3-O-Ethyl Ascorbic Acid delivers potent results by penetrating
+                        deep within to reduce melanin production and enhance your natural radiance.
+                        It’s designed with dermatologists, making it a safe and effective choice for all skin types,
+                        ensuring transparency in active percentage and consistent performance.
+                    </span>
+                    <button id="toggle-btn" class="text-[#C1E1C1] font-semibold ml-1">Read More</button>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Product Features Ends -->
+
+    <!--Hero Section Ends  -->
+    <!-- Before/after section starts -->
+    <section class=" py-20 bg-[#FFFDF9] text-[#1A1A1A] max-w-7xl mx-auto px-6 ">
+        <h2 class="text-2xl font-bold mb-4">Expected Results</h2>
+
+        <!-- Slider Container -->
+        <div id="slider-container"
+            class="relative w-full h-[550px] overflow-hidden rounded-lg shadow-md select-none cursor-ew-resize mb-3">
+
+            <!-- Base Image -->
+            <img src="Images/skin3.jpg" alt="Result Image" class="absolute inset-0 w-full h-full object-cover z-10">
+
+            <!-- Lavender Overlay -->
+            <div id="overlay"
+                class="absolute inset-0 bg-[#F5F3F7]/90 z-20 pointer-events-none transition-all duration-200"
+                style="clip-path: inset(0 0 0 66%);">
+            </div>
+
+            <!-- Slider Handle -->
+            <div id="handle"
+                class="absolute top-0 z-30 h-full w-10 flex justify-center items-center pointer-events-none transition duration-200"
+                style="left: 66%;">
+                <div class="bg-[#FFF7F0] shadow-lg rounded-full p-2">
+                    <img src="Images/icons/bottle.png" alt="Handle" class="w-6 h-6 object-contain" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Labels (separated from slider box) -->
+        <div class="flex justify-between text-xs text-white bg-[#7D7D7D] py-1 px-2 rounded font-medium">
+            <span id="label-day1">Day 1</span>
+            <span id="label-day5" class="text-[#FF7A00]">Day 5</span>
+            <span id="label-day33">Day 33</span>
+        </div>
+    </section>
+    <!-- Before/after section ends -->
+
+    <!-- Testmonials section starts -->
+    <section>
+        <div
+            class="max-w-7xl mx-auto rounded-3xl shadow-lg p-8 md:p-12 border border-[#F9E6D3] bg-gradient-to-br from-[#FFB7C5] via-[#F9E6D3] to-[#FFFDF9] py-12 px-6 shadow-outer">
+
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-[#1A1A1A] mb-10">Real People Real Stories
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Testimonial Card 1 -->
+                <div class="bg-[#F5F3F7] rounded-xl shadow p-4 border border-[#C1E1C1] max-w-xs text-center mx-auto">
+                    <!-- Stacked Image Effect -->
+                    <div class="relative w-fit mx-auto mb-4">
+                        <div class="absolute top-2 left-2 w-36 h-44 bg-white shadow -rotate-2 rounded-xl z-0"></div>
+                        <img src="Images/skin0.jpg" alt="Divya"
+                            class="relative w-36 h-44 object-cover rounded-xl shadow z-10 border border-white" />
+                    </div>
+
+                    <!-- Name, Rating & Verified Row -->
+                    <div class="flex justify-center items-center space-x-2 text-[#1A1A1A] font-medium mb-1">
+                        <span>Divya</span>
+                        <img src="/Images/icons/star.png" alt="star" class="w-4 h-4">
+                        <span>5</span>
+                        <img src="/Images/icons/verified-badge.png" alt="verified" class="w-4 h-4">
+                    </div>
+
+                    <!-- Title -->
+                    <p class="font-semibold text-[#1A1A1A]">Got My Glow Back with 20% Vitamin C!</p>
+
+                    <!-- Testimonial -->
+                    <p class="text-sm text-[#7D7D7D] mt-2 leading-relaxed text-justify">
+                        My friend recommended this product as it helped her get amazing results. I was so happy to see
+                        my
+                        skin changing over the weeks.
+                    </p>
+                </div>
+
+
+
+                <!-- Testimonial Card 2 -->
+                <div class="bg-[#F5F3F7] rounded-xl shadow p-4 border border-[#C1E1C1] max-w-xs text-center mx-auto">
+                    <!-- Stacked Image Effect -->
+                    <div class="relative w-fit mx-auto mb-4">
+                        <div class="absolute top-2 left-2 w-36 h-44 bg-white shadow -rotate-2 rounded-xl z-0"></div>
+                        <img src="Images/skin1.jpg" alt="Divya"
+                            class="relative w-36 h-44 object-cover rounded-xl shadow z-10 border border-white" />
+                    </div>
+
+                    <!-- Name, Rating & Verified Row -->
+                    <div class="flex justify-center items-center space-x-2 text-[#1A1A1A] font-medium mb-1">
+                        <span>Divya</span>
+                        <img src="/Images/icons/star.png" alt="star" class="w-4 h-4">
+                        <span>5</span>
+                        <img src="/Images/icons/verified-badge.png" alt="verified" class="w-4 h-4">
+                    </div>
+
+                    <!-- Title -->
+                    <p class="font-semibold text-[#1A1A1A]">This is Magical Results in 5 Weeks!</p>
+
+                    <!-- Testimonial -->
+                    <p class="text-sm text-[#7D7D7D] mt-2 leading-relaxed text-justify">
+                        I am nearing my 30s & my skin started showing wear. In 6 weeks I saw visible results. So many
+                        benefits and NO SIDE EFFECTS! </p>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="bg-[#F5F3F7] rounded-xl shadow p-4 border border-[#C1E1C1] max-w-xs text-center mx-auto">
+                    <!-- Stacked Image Effect -->
+                    <div class="relative w-fit mx-auto mb-4">
+                        <div class="absolute top-2 left-2 w-36 h-44 bg-white shadow -rotate-2 rounded-xl z-0"></div>
+                        <img src="Images/skin2.jpg" alt="Divya"
+                            class="relative w-36 h-44 object-cover rounded-xl shadow z-10 border border-white" />
+                    </div>
+
+                    <!-- Name, Rating & Verified Row -->
+                    <div class="flex justify-center items-center space-x-2 text-[#1A1A1A] font-medium mb-1">
+                        <span>Divya</span>
+                        <img src="/Images/icons/star.png" alt="star" class="w-4 h-4">
+                        <span>5</span>
+                        <img src="/Images/icons/verified-badge.png" alt="verified" class="w-4 h-4">
+                    </div>
+
+                    <!-- Title -->
+                    <p class="font-semibold text-[#1A1A1A]">Treated Pigmentation in 6 Weeks!</p>
+
+                    <!-- Testimonial -->
+                    <p class="text-sm text-[#7D7D7D] mt-2 leading-relaxed text-justify">
+                        Harsh sun rays damaged my skin. I used the 20% Vitamin C and got results without ANY SIDE
+                        EFFECTS!
+                        My skin now looks amazing. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials section ends -->
+
+    <!-- Review faq additional info section starts -->
+    <div class="max-w-7xl mx-auto px-6 py-8 space-y-6">
+        <!-- Reviews Section -->
+        <section class="space-y-6">
+            <details class="bg-gray-100 rounded-md shadow-sm">
+                <summary class="cursor-pointer px-6 py-4 font-semibold text-lg flex justify-between items-center">
+                    Reviews
+                    <span class="text-xl">⌄</span>
+                </summary>
+
+                <!-- Actual review content (moved outside summary) -->
+                <div class="px-6 pb-6 space-y-6">
+                    <!-- Header section -->
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-3xl font-bold">Reviews</h2>
+                        <div class="text-right">
+                            <p class="text-4xl font-semibold">4.8</p>
+                            <div class="text-black text-xl">★★★★★</div>
+                            <p class="text-sm text-gray-500">2164 reviews</p>
+                        </div>
+                    </div>
+
+                    <!-- Write Review Button -->
+                    <button class="bg-black text-white font-medium px-6 py-2 rounded-md cursor-pointer">
+                        Write a review
+                    </button>
+
+                    <!-- Review Items -->
+                    <div class="border-t pt-6 space-y-6">
+                        <!-- Review 1 -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-green-200 flex items-center justify-center font-bold text-white">
+                                A
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="font-bold">Aiman A.</p>
+                                        <p class="text-sm text-gray-500">Thane, MH</p>
+                                    </div>
+                                    <p class="text-sm text-gray-500">5 months ago</p>
+                                </div>
+                                <div class="text-black mt-2">★★★★★</div>
+                                <p class="font-semibold mt-1">Excellent!</p>
+                                <div class="mt-2">
+                                    <video controls class="w-32 rounded-md">
+                                        <source src="sample-video.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-200 flex items-center justify-center font-bold text-white">
+                                R
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="font-bold">Renuka R.</p>
+                                        <p class="text-sm text-gray-500">Aurangabad, MH</p>
+                                    </div>
+                                    <p class="text-sm text-gray-500">7 months ago</p>
+                                </div>
+                                <div class="text-black mt-2">★★★★★</div>
+                                <p class="font-semibold mt-1">Excellent!</p>
+                                <div class="mt-2 grid grid-cols-2 gap-2">
+                                    <img src="Images/skin1.jpg" alt="Review Media" class="w-32 rounded-md" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- FAQ Section -->
+        <section class="space-y-4">
+            <details class="bg-gray-100 rounded-md shadow-sm">
+                <summary class="cursor-pointer px-6 py-4 font-semibold text-lg flex justify-between items-center">
+                    FAQs
+                    <span class="text-xl">⌄</span>
+                </summary>
+                <div class="px-6 pb-4">
+                    <details class="py-3 border-t">
+                        <summary class="font-medium cursor-pointer flex justify-between items-center">
+                            What are product specifications?
+                            <span>+</span>
+                        </summary>
+                        <p class="mt-2 text-sm text-gray-700">
+                            Vitamin C serum is a powerful antioxidant that neutralizes free radicals, protecting skin
+                            from photo-ageing. It also brightens skin tone and reduces signs of ageing.
+                        </p>
+                    </details>
+                    <details class="py-3 border-t">
+                        <summary class="font-medium cursor-pointer flex justify-between items-center">
+                            What does vitamin C serum do for the skin?
+                            <span>+</span>
+                        </summary>
+                        <p class="mt-2 text-sm text-gray-700">
+                            Vitamin C serum is a powerful antioxidant that neutralizes free radicals, protecting skin
+                            from photo-ageing. It also brightens skin tone and reduces signs of ageing.
+                        </p>
+                    </details>
+                    <details class="py-3 border-t">
+                        <summary class="font-medium cursor-pointer flex justify-between items-center">
+                            Can I use Vitamin C in AM?
+                            <span>+</span>
+                        </summary>
+                        <p class="mt-2 text-sm text-gray-700">
+                            Vitamin C serum is a powerful antioxidant that neutralizes free radicals, protecting skin
+                            from photo-ageing. It also brightens skin tone and reduces signs of ageing.
+                        </p>
+                    </details>
+                    <details class="py-3 border-t border-b">
+                        <summary class="font-medium cursor-pointer flex justify-between items-center">
+                            Does this need to be refrigerated?
+                            <span>+</span>
+
+                        </summary>
+                        <p class="mt-2 text-sm text-gray-700">
+                            Vitamin C serum is a powerful antioxidant that neutralizes free radicals, protecting skin
+                            from photo-ageing. It also brightens skin tone and reduces signs of ageing.
+                        </p>
+                    </details>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- Additional Info Section -->
+        <details class="bg-gray-100 rounded-md shadow-sm">
+            <summary class="cursor-pointer px-6 py-4 font-semibold text-lg flex justify-between items-center">
+                Additional Information
+                <span class="text-xl">⌄</span>
+            </summary>
+            <div class="px-6 pb-4">
+                <ul class="list-disc pl-4 text-sm text-gray-700 space-y-2">
+                    <li>Volume: 30ml</li>
+                    <li>Ingredients: Vitamin C, Hyaluronic Acid, Aloe Vera</li>
+                    <li>Skin Type: All skin types</li>
+                </ul>
+            </div>
+        </details>
+        </section>
+    </div>
+
+
+    <!-- Review faq additional info section ends  -->
+    <!-- Footer starts -->
+    <footer class="bg-[#F5F3F7] text-[#1A1A1A] text-sm">
+        <!-- Top Footer Content -->
+        <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Column 1 -->
+            <div>
+                <h3 class="font-semibold mb-2">Order & Support</h3>
+                <ul class="space-y-1">
+                    <li><a href="#">Track My Order</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <h3 class="font-semibold mb-2">Information</h3>
+                <ul class="space-y-1">
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <h3 class="font-semibold mb-2">Contact Us</h3>
+                <ul class="space-y-1">
+                    <li><a href="#">Get in touch</a></li>
+                    <li><a href="#">Store Locator</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter -->
+            <div class="md:col-span-1">
+                <p class="mb-3">
+                    Stay up to date with our latest offers and product launches & be the first to get exclusive offers
+                    and sale information
+                </p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email address"
+                        class="w-full px-4 py-2 rounded-l bg-white text-black border border-black focus:outline-none">
+                    <button type="submit"
+                        class="bg-black text-white px-4 py-2 rounded-r hover:bg-[#FFB7C5] hover:text-black transition">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Divider Line -->
+        <hr class="border-[#1A1A1A] w-11/12 mx-auto" />
+
+        <!-- Logo + Social Icons -->
+        <div class="max-w-7xl mx-auto px-4 py-8 text-center">
+            <a href="#" class="text-[#1A1A1A] font-serif text-2xl font-bold mx-auto">
+                GlowGenix
+            </a>
+            <div class="flex justify-center space-x-4">
+                <a href="#"><img src="Images/icons/facebook.png" alt="Facebook" class="w-5 h-5"></a>
+                <a href="#"><img src="Images/icons/x.png" alt="Twitter/X" class="w-5 h-5"></a>
+                <a href="#"><img src="Images/icons/instagram.png" alt="Instagram" class="w-5 h-5"></a>
+                <a href="#"><img src="Images/icons/youtube.png" alt="YouTube" class="w-5 h-5"></a>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bg-black text-white text-xs text-center py-4 tracking-wider">
+            &copy; 2025 GlowGenix Cosmetics. All rights reserved.
+        </div>
+    </footer>
+    <!-- Footer ends -->
+     <div id="cart-popup" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded shadow-lg hidden flex items-center gap-2 z-50">
+  <span>✅ Added to cart!</span>
+  <button onclick="closePopup()" class="ml-2 text-white text-xl leading-none">&times;</button>
+</div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
