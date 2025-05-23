@@ -4,7 +4,7 @@ A responsive skincare product landing page built using HTML, Tailwind CSS, and J
 
 ## 🚀 Live Preview
 
-[View Live on Netlify](https://glow-genix-498f4d.netlify.app/)  
+[View Live on Netlify](https://glow-genix-c23ea9.netlify.app/)  
 
 ---
 
